@@ -362,15 +362,15 @@ def oxygen_equip_location_breakdown(conn, equip, display = 0): # type(equip) = s
 
 ####################################
 # Create connection
-conn = sqlite3.connect('NHSRC.db')
+conn = sqlite3.connect('Inventory.db')
 cur = conn.cursor()
 
-# # Set up and clean 'NHSRC.db'
+# # Set up and clean 'Inventory.db'
 # Table: Inventory
 if table_exists(conn, 'Inventory'): # Remove when done
     clear_table(conn, 'Inventory')
 
-state_csv = 'C:\Users\Queen Grace\Documents\Data\UP\UP MASTER SHEET.csv'
+state_csv = 'file'
 create_inventory_table(conn)
 populate_inventory(conn, state_csv)
 clean_table(conn)
